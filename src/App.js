@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Content from './components/Content';
+import Footer from './components/Footer';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [message, setMessage] = useState('Welcome to Debugging!');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="Debug Sample App" />
+      <Content message={message} />
+      <Footer year={2025} />
     </div>
   );
 }
